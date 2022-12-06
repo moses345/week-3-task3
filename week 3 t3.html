@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Tables</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            
+
+        }
+       th,td {
+        text-align: center;
+        padding: 7px;
+        border: solid;
+       }
+       
+    </style>
+  </head>
+  <body id="body">
+    
+
+    <script>
+      let arr = [
+      ["Group Id", "Project Name"],
+
+["G6", "Develop a Software for Categorization of cases"],
+
+["G8", "Develop a Software for Categorization of cases"],
+
+["G41", "Crowd Sourcing model for preparing large question banks"],
+
+["G47", "Crowd Sourcing model for preparing large question banks"],
+
+["G30", "Online project platform for sharing"],
+
+["G26", "Online project platform for sharing"],
+
+["G33", "Centralized grievance system portal"],
+
+["G38", "Centralized grievance system portal"]];
+      let p = document.createElement("table");
+      let p1 = document.createElement("thead");
+      let p2 = document.createElement("tbody");
+      p.append(p1, p2);
+   
+
+      for (let i = 0; i < arr.length; i++) {
+        if (i == 0) {
+          let th = document.createElement("th");
+          let th2 = document.createElement("th");
+
+          th.innerHTML = arr[0][0];
+          th2.innerHTML = arr[0][1];
+          let head=document.createElement('tr');
+          head.append(th,th2);
+          p1.appendChild(head);
+        }
+        else{
+
+            let tdata = document.createElement("td");
+            tdata.innerHTML = arr[i][0];
+            let tdata2 = document.createElement("td");
+            tdata2.innerHTML = arr[i][1];
+            let row = document.createElement("tr");
+            row.append(tdata, tdata2);
+            p2.appendChild(row);
+        }
+      }
+      document.getElementById('body').appendChild(p);
+    </script>
+  </body>
+</html>
